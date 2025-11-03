@@ -30,7 +30,7 @@ var upload = multer({
 });
 
 // Albums Page
-router.get('/albums/:id', ensureAuthenticated, (req, res) => {
+router.get('/:id', ensureAuthenticated, (req, res) => {
     User.findOne({ username: req.params.id }, (err, user) => {
         if(err) {
             console.log(err);
