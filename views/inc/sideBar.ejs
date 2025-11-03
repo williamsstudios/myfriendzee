@@ -1,0 +1,16 @@
+<div class="col-lg-2">
+    <ul class="list-group mt-4">
+        <li class="list-group-item d-flex align-items-center">
+            <a href="/users/dashboard" class="nav-link"><i class="fa-solid fa-house me-2"></i> Home</a>
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+            <a href="/users/<%- logUser.username %>" class="nav-link"><i class="fa-solid fa-user me-3"></i>Profile</a>
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+            <a href="/users/search" class="nav-link"><i class="fa-solid fa-magnifying-glass me-2"></i> Search</a>
+        </li>
+        <li class="list-group-item d-flex align-items-center">
+            <a href="/photos/albums/<%- logUser.username %>" class="nav-link"><i class="fa-solid fa-photo-film me-1"></i> Photos</a>
+        </li>
+    </ul>
+</div>

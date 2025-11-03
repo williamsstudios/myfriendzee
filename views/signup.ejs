@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- title %></title>
+    <link rel="stylesheet" href="/sass/bootstrap.min.css">
+    <link rel="stylesheet" href="/sass/main.css">
+    <link rel="icon" type="image/x-icon" href="/img/logos/favicon.ico">
+    <script defer src="/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <%- include('./inc/header.ejs') %>
+    <div class="container" style="margin-top: 62px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <%- include('./inc/messages.ejs') %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Log into Account</h3>
+                        <hr />
+                        <form method="POST" action="/users/signup">
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" id="firstname" name="firstname" placeholder="First Name">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" id="lastname" name="lastname" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <input type="text" class="form-control form-control-lg" id="username" name="username" placeholder="Desired Username">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <input type="email" class="form-control form-control-lg" id="reg_email" name="reg_email" placeholder="Email Address">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <input type="password" class="form-control form-control-lg" id="pass" name="pass" placeholder="Create Password">
+                                </div>
+                                <div class="col pl-0">
+                                    <input type="password" class="form-control form-control-lg" id="pass2" name="pass2" placeholder="Re-enter Password">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <select class="form-control form-control-lg" id="gender" name="gender">
+                                        <option value="">Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Prefer Not To Say">Prefer Not To Say</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <select class="form-control form-control-lg" id="country" name="country">
+                                        <option value="">Select Country</option>
+                                        <%- include('./inc/country_list.ejs') %>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="birthday">Birthday</label>
+                                    <input type="date" class="form-control form-control-lg" id="birthday" name="birthday">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-success btn-lg">Sign Up</button>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <small class="text-light">By clicking "Sign Up" you agree to our <a href='#' class="signup-link">Terms Of Use</a> and our <a href='#' class="signup-link">Data Policy</a></small>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</body>
+</html>
+

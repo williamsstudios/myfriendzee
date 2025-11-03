@@ -1,0 +1,127 @@
+$color-1: #000000;
+$color-2: #1d1d1d;
+$color-3: #1c0191;
+$color-4: #7073ff;
+
+$color-light: #FFFFFF;
+
+body {
+    background: $color-2;
+}
+
+.navbar {
+    background: $color-1;
+}
+a.nav-link {
+    color: $color-light;
+    font-size: 20px;
+}
+a.nav-link:hover {
+    color: $color-3;
+    text-decoration: none;
+}
+a.photoLink {
+    color: $color-3;
+    text-decoration: none;
+}
+
+a.signup-link {
+    color: $color-4;
+    text-decoration: none;
+}
+a.signup-link:hover {
+    color: $color-4;
+    text-decoration: underline;
+}
+a.menu-link {
+    color: $color-light;
+    text-decoration: none;
+}
+a.menu-link:hover {
+    color: $color-3;
+}
+
+.card, .list-group {
+    background: $color-1;
+    border: 0;
+    color: $color-light;
+}
+.nav-link.active {
+  background-color: $color-1 !important; 
+  color: white !important;
+  border-color: $color-4 !important;
+}
+.nav-tabs .nav-link:not(.active) {
+  background-color: $color-1 !important;
+  color: $color-4 !important;
+  border-color: $color-3 !important;
+}
+#proCard {
+    background: $color-1;
+    border: 1px $color-3 solid;
+    color: $color-light;
+}
+#proItem {
+    background: $color-1;
+    border: 0px;
+    color: $color-light;
+}
+.list-group > .list-group-item > a.nav-link {
+    color: $color-4;
+    font-size: 20px;
+}
+.list-group-item {
+    background: $color-2;
+    border: 0;
+    border-radius: 0px;
+}
+
+.form-control, .form-control::placeholder {
+    background: $color-2;
+    color: $color-light;
+    box-shadow: 0px;
+    outline: none;
+    font-size: 19px;
+}
+.form-control:focus {
+    background: $color-2;
+    color: $color-light;
+    box-shadow: none;
+    outline: none;
+    border: 1px $color-light solid;
+}
+
+.accordion-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#commentsContainer {
+    min-height: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.btn-dark {
+    background: $color-1;
+    border: 0px;
+}
+
+.video_container {
+    width: 100%;
+    height: 700px;
+    background: $color-1;
+}
+#playlist {
+    width: 100%;
+    height: 700px;
+    background: $color-4;
+}
+#playlist-header {
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px $color-1 solid;
+    padding: 20px;
+    color: $color-light;
+}
