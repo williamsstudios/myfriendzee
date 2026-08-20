@@ -1,0 +1,49 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+<div class="container" style="margin-top: 68px;">
+     <div class="row">
+          <div class="col-lg-12">
+               <%- include("./inc/messages.ejs") %>
+          </div>
+     </div>
+     <div class="row mb-2">
+          <div class="col-lg-12">
+               <div class="jumbotron jumbotron-fluid p-0" style="min-height: 300px; background: #AAA;">
+                    <img src="/img/default_cover.jpg" width="100%" height="300">
+               </div>
+          </div>
+     </div>
+     <div class="row">
+          <div class="col-lg-4">
+               <div class="card mt-3">
+                    <h5 class="card-header bg-dark text-danger">Latest Users</h5>
+                    <div class="card-body">
+                         <% for(var u = 0; u<users.length; u++) { %>
+                              <div class="row pb-3 border-bottom">
+                                   <div class="col-lg-1">
+                                        <a href="/users/<%- users[u].username %>">
+                                             <% if(users[u].avatar == "") { %>
+                                                  <img src="/uploads/<%- users[u].username %>/<%- users[u].avatar %>" width="20" height="20" class="rounded-circle">
+                                             <% } else { %>
+                                                  <img src="/img/no_pic.jpg" width="20" height="20" class="rounded-circle">
+                                             <% } %>
+                                        </a>
+                                   </div>
+                                   <div class="col-lg-10">
+                                        <a href="/users/<%- users[u].username %>">
+                                             <%- users[u].username %>
+                                        </a>
+                                   </div>
+                              </div>
+                         <% } %>
+                    </div>
+               </div>
+          </div>
+          <div class="col-lg-8">
+               <div class="card mt-3">
+                    <h5 class="card-header bg-dark text-danger">News</h5>
+               </div>
+          </div>
+     </div>
+</div>
+<%- include('partials/footer') %>

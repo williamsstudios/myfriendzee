@@ -1,0 +1,236 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/navbar.ejs') %>
+<div class="container" style="margin-top: 68px;">
+     <div class="row">
+          <div class="col-lg-12">
+               <%- include("./inc/messages.ejs") %>
+          </div>
+     </div>
+     <div class="row mb-2">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4">
+               <div class="card mt-4">
+                    <div class="card-body">
+                         <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+                             <li class="nav-item">
+                                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-fan" role="tab" aria-controls="pills-fan" aria-selected="true">Fan Sign Up</a>
+                             </li>
+                             <li class="nav-item">
+                                 <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-artist" role="tab" aria-controls="pills-artist" aria-selected="false">Artist Sign Up</a>
+                             </li>
+                         </ul>
+                         <div class="tab-content" id="pills-tabContent">
+                              <div class="tab-pane fade show active" id="pills-fan" role="tabpanel" aria-labelledby="pills-fan-tab">
+                                   <form method="POST" action="/auth/signup/fan">
+                                        <div class="row mb-2">
+                                             <div class="col">
+                                                  <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+                                             </div>
+                                             <div class="col pl-0">
+                                                  <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
+                                             </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                             <div class="col">
+                                                  <input type="text" class="form-control" id="username" name="username" placeholder="Desired Username">
+                                             </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                             <div class="col">
+                                                  <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+                                             </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                             <div class="col">
+                                                  <input type="password" class="form-control" id="pass" name="pass" placeholder="Create Password">
+                                             </div>
+                                             <div class="col pl-0">
+                                                  <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Re-enter Password">
+                                             </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                             <div class="col">
+                                                  <select id="gender" name="gender" class="form-control">
+                                                  <option value="">Select Gender</option>
+                                                  <option value="female">Female</option>
+                                                  <option value="male">Male</option>
+                                                  <option value="nonbinary">Non-binary</option>
+                                                  <option value="agender">Agender</option>
+                                                  <option value="genderfluid">Genderfluid</option>
+                                                  <option value="bigender">Bigender</option>
+                                                  <option value="genderqueer">Genderqueer</option>
+                                                  <option value="transgender_woman">Transgender Woman</option>
+                                                  <option value="transgender_man">Transgender Man</option>
+                                                  <option value="two_spirit">Two-Spirit</option>
+                                                  <option value="intersex">Intersex</option>
+                                                  <option value="prefer_not_to_say">Prefer not to say</option>
+                                                  </select>
+                                             </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                             <div class="col">
+                                                  <select class="form-control" id="country" name="country">
+                                                  <option value="">Select Your Country</option>
+                                                  <%- include("./inc/country_list.ejs") %>
+                                                  </select>
+                                             </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                             <div class="col">
+                                                  <label for="birthday">Birthday</label>
+                                                  <input type="date" class="form-control" id="birthday" name="birthday">
+                                             </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                             <div class="col">
+                                                  <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+                                             </div>
+                                        </div>
+                                        <div class="row mb-4">
+                                             <div class="col">
+                                                  <small>By clicking "Sign Up", you agree to our <a href="/">Terms Of Use</a> and our <a href="/">Data Policy</a></small>
+                                             </div>
+                                        </div>
+                                        <div class="row mb-2">
+                                             <div class="col">
+                                                  <a href="/">Alrady Have An Account? Click Here</a>
+                                             </div>
+                                        </div>
+                                   </form>
+                        </div>
+                        <div class="tab-pane fade" id="pills-artist" role="tabpanel" aria-labelledby="pills-artist-tab">
+                             <form method="POST" action="/auth/signup/artist">
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+                                    </div>
+                                    <div class="col pl-0">
+                                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="artistName" name="artistName" placeholder="Artist Name">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Desired Username">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <input type="password" class="form-control" id="pass" name="pass" placeholder="Create Password">
+                                    </div>
+                                    <div class="col pl-0">
+                                        <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Re-enter Password">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <select id="gender" name="gender" class="form-control">
+                                            <option value="">Select Gender</option>
+                                            <option value="female">Female</option>
+                                            <option value="male">Male</option>
+                                            <option value="nonbinary">Non-binary</option>
+                                            <option value="agender">Agender</option>
+                                            <option value="genderfluid">Genderfluid</option>
+                                            <option value="bigender">Bigender</option>
+                                            <option value="genderqueer">Genderqueer</option>
+                                            <option value="transgender_woman">Transgender Woman</option>
+                                            <option value="transgender_man">Transgender Man</option>
+                                            <option value="two_spirit">Two-Spirit</option>
+                                            <option value="intersex">Intersex</option>
+                                            <option value="prefer_not_to_say">Prefer not to say</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <select class="form-control" id="country" name="country">
+                                            <option value="">Select Your Country</option>
+                                            <%- include("./inc/country_list.ejs") %>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <select id="genre" name="genre" class="form-control">
+                                            <option value="">Select Genre</option>
+                                            <option value="Alternative">Alternative</option>
+                                            <option value="Blues">Blues</option>
+                                            <option value="Christian">Christian</option>
+                                            <option value="Classical">Classical</option>
+                                            <option value="Country">Country</option>
+                                            <option value="Dance">Dance</option>
+                                            <option value="Disco">Disco</option>
+                                            <option value="Drill">Drill</option>
+                                            <option value="Dubstep">Dubstep</option>
+                                            <option value="EDM">EDM</option>
+                                            <option value="Electronic">Electronic</option>
+                                            <option value="Folk">Folk</option>
+                                            <option value="Funk">Funk</option>
+                                            <option value="Gospel">Gospel</option>
+                                            <option value="Grunge">Grunge</option>
+                                            <option value="Hip Hop">Hip Hop</option>
+                                            <option value="House">House</option>
+                                            <option value="Indie">Indie</option>
+                                            <option value="Instrumental">Instrumental</option>
+                                            <option value="Jazz">Jazz</option>
+                                            <option value="K-Pop">K-Pop</option>
+                                            <option value="Latin">Latin</option>
+                                            <option value="Lo-Fi">Lo-Fi</option>
+                                            <option value="Metal">Metal</option>
+                                            <option value="New Age">New Age</option>
+                                            <option value="Opera">Opera</option>
+                                            <option value="Pop">Pop</option>
+                                            <option value="Punk">Punk</option>
+                                            <option value="R&B">R&amp;B</option>
+                                            <option value="Rap">Rap</option>
+                                            <option value="Reggae">Reggae</option>
+                                            <option value="Rock">Rock</option>
+                                            <option value="Ska">Ska</option>
+                                            <option value="Soul">Soul</option>
+                                            <option value="Techno">Techno</option>
+                                            <option value="Trance">Trance</option>
+                                            <option value="Trap">Trap</option>
+                                            <option value="World">World</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <label for="birthday">Birthday</label>
+                                        <input type="date" class="form-control" id="birthday" name="birthday">
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <small>By clicking "Sign Up", you agree to our <a href="/">Terms Of Use</a> and our <a href="/">Data Policy</a></small>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <a href="/">Alrady Have An Account? Click Here</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+               </div>
+          </div>
+          <div class="col-lg-4"></div>
+     </div>
+</div>
+<%- include('partials/footer') %>
